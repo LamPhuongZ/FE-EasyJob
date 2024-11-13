@@ -18,6 +18,9 @@ import How3Image from "./images/How3.png";
 import How4Image from "./images/How4.png";
 import How5Image from "./images/How5.png";
 import How6Image from "./images/How6.png";
+import CheckedImage from "./images/Checked.png";
+import LocationImage from "./images/Location.png";
+import UploadImage from "./images/Upload.png";
 
 import GoogleIcon from "./icons/Google.svg";
 import PhoneIcon from "./icons/phone.svg";
@@ -27,6 +30,7 @@ import BriefcaseFillIcon from "./icons/briefcase-fill.svg";
 import EaselFillIcon from "./icons/easel-fill.svg";
 import ShieldFillIcon from "./icons/shield-fill.svg";
 import VectorIcon from "./icons/vector.svg";
+import StarIcon from "./icons/star.svg";
 
 export const assetsGif = {
   FourOhFourGif,
@@ -51,6 +55,9 @@ export const assetsImage = {
   How4Image,
   How5Image,
   How6Image,
+  CheckedImage,
+  LocationImage,
+  UploadImage,
 };
 
 export const assetsIcon = {
@@ -62,4 +69,5 @@ export const assetsIcon = {
   EaselFillIcon,
   ShieldFillIcon,
   VectorIcon,
+  StarIcon,
 };

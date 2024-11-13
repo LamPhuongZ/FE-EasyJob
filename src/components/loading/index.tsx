@@ -1,4 +1,4 @@
-import gifLoading from "../../assets/gifs/gg.gif";
+import { assetsGif } from "../../assets/assets";
 
 export default function Loading() {
   return (
@@ -8,7 +8,7 @@ export default function Loading() {
       <div
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
       >
-        <img src={gifLoading} alt="loading" loading="lazy" />
+        <img src={assetsGif.LoadingGif} alt="loading" loading="lazy" />
       </div>
     </div>
   );

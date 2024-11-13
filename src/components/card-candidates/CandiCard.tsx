@@ -1,6 +1,6 @@
-import checked from "../../assets/images/checked.png";
-import star from "../../assets/icons/star.svg";
+import { assetsIcon, assetsImage } from "../../assets/assets";
 import { Content } from "../../redux/reducers/candidateReducer";
+
 type Props = {
   item: Content;
   className?: string;
@@ -42,7 +42,7 @@ export default function CandiCard({
             {item.isVerified ? (
             <div className="w-6 h-6 small-tablet:w-4 small-tablet:h-4">
               <img
-                src={checked}
+                src={assetsImage.CheckedImage}
                 alt="checked"
                 className="w-full h-full object-cover"
               />
@@ -67,7 +67,7 @@ export default function CandiCard({
           </div>
           <div className="flex items-center gap-2">
             <div className="w-6 h-6">
-              <img src={star} alt="" className="w-full h-full" />
+              <img src={assetsIcon.StarIcon} alt="" className="w-full h-full" />
             </div>
             <p className="text-3xl font-medium pt-1">{item.star && item.star ? item.star : 0}</p>
           </div>

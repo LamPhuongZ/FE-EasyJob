@@ -1,9 +1,8 @@
 import Button from "../button/Button";
-import location from "../../assets/images/location.png";
-import calendar from "../../assets/images/calendar.png";
 import { Content } from "../../redux/reducers/jobReducer";
 import { useNavigate } from "react-router-dom";
 import { JobApprovalStatusEnum } from "../../enums/jobApproval.enum";
+import { assetsImage } from "../../assets/assets";
 
 type Props = {
   item: Content & { jobDetail?: { size: number } };
@@ -41,7 +40,7 @@ export default function JobCardV2({
             <div className="flex items-center gap-3">
               <div className="w-5 h-5 small-tablet:w-4 small-tablet:h-4">
                 <img
-                  src={calendar}
+                  src={assetsImage.Calendar}
                   alt="calendar"
                   className="w-full h-full object-cover"
                 />
@@ -63,7 +62,7 @@ export default function JobCardV2({
             <div className="flex items-center gap-1">
               <div className="w-5 h-5 small-tablet:w-4 small-tablet:h-4">
                 <img
-                  src={location}
+                  src={assetsImage.LocationImage}
                   alt="location"
                   className="w-full h-full object-cover"
                 />

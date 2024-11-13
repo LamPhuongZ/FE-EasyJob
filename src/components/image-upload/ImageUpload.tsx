@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import upIMG from "../../assets/images/img-upload.png";
 import clsx from "clsx";
+import { assetsImage } from "../../assets/assets";
 
 interface ImageUploadProps extends Partial<HTMLInputElement> {
   listType?: "picture-circle" | "text" | "picture";
@@ -81,7 +81,7 @@ export default function ImageUploadProps({
       {!imageSelect ? (
         <div className="flex flex-col items-center text-center pointer-events-none">
           <img
-            src={upIMG}
+            src={assetsImage.UploadImage}
             alt="upload-img"
             className="max-w-[80px] mb-5"
             loading="lazy"

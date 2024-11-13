@@ -1,8 +1,6 @@
-import checked from "../../assets/images/checked.png";
-import phone from "../../assets/icons/phone.svg";
-import star from "../../assets/icons/star.svg";
 import Button from "../button/Button";
 import { Content } from "../../redux/reducers/candidateReducer";
+import { assetsIcon, assetsImage } from "../../assets/assets";
 
 type Props = {
   item: Content;
@@ -27,7 +25,7 @@ export default function CandiCardDetail({ item, className }: Props) {
             {item.isVerified ? (
               <div className="flex gap-2 items-center">
                 <div className="w-8 h-8 small-tablet:w-4 small-tablet:h-4">
-                  <img src={checked} alt="" className="w-full h-full" />
+                  <img src={assetsImage.CheckedImage} alt="" className="w-full h-full" />
                 </div>
                 <p className="font-medium">Đã xác thực</p>
               </div>
@@ -37,7 +35,7 @@ export default function CandiCardDetail({ item, className }: Props) {
           </div>
           <div className="flex gap-2 items-center justify-end">
             <div className="w-6 h-6">
-              <img src={phone} alt="" className="w-full h-full" />
+              <img src={assetsIcon.PhoneIcon} alt="" className="w-full h-full" />
             </div>
             <p className="text-2xl font-medium pt-2">0909090909</p>
           </div>
@@ -74,7 +72,7 @@ export default function CandiCardDetail({ item, className }: Props) {
           <div className="py-[15px] flex items-center justify-center border border-solid rounded-[20px] small-tablet:py-[10px] small-tablet:rounded-[10px]">
             <div className="flex items-center gap-2">
               <div className="w-6 h-6">
-                <img src={star} alt="" className="w-full h-full" />
+                <img src={assetsIcon.StarIcon} alt="" className="w-full h-full" />
               </div>
               <p className="text-2xl font-medium small-tablet:text-sm pt-1">
                 {item.star}
