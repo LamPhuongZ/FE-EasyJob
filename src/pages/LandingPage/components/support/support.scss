@@ -1,0 +1,10 @@
+@use '../../../../styles/utils/mixin' as *;
+
+.support {
+    @apply bg-[#F1F2FD];
+    @include flexbox-layout(column, center, center);
+
+    & > .support__title {
+        @apply mb-2 text-center font-medium text-4xl mt-10 capitalize;
+    }
+}

@@ -1,0 +1,99 @@
+@use "./utils/mixin" as *;
+
+@use "./base/reset" as *;
+
+@use "./components/field" as *;
+@use "./components/header" as *;
+@use "./components/banner" as *;
+@use "./components/footer" as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f4f9fd;
+}
+
+.container__wrapper {
+  @include flexbox-layout(column, center, center);
+}
+
+.content__layout {
+  @apply pb-[66px] relative w-full;
+}
+
+textarea::-webkit-input-placeholder {
+  color: #84878b;
+}
+textarea::-moz-input-placeholder {
+  color: #84878b;
+}
+
+.form-layout {
+  @apply grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 mb-5 lg:mb-10;
+}
+
+.form-layout-col3 {
+  @apply grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-x-10 mb-10 lg:mb-10;
+}
+
+.form-layout-col4 {
+  @apply grid grid-cols-1 gap-10 lg:grid-cols-4 mb-10 lg:mb-10;
+}
+
+.btn-component {
+  @apply border duration-300 flex justify-center items-center relative cursor-pointer text-sky-50 overflow-hidden rounded-[14px] p-2 font-bold text-xl;
+}
+
+.btn-component .circle-1 {
+  @apply absolute right-32 -top-4 z-10 w-40 h-40 rounded-full duration-500 bg-sky-900;
+}
+
+.btn-component .circle-2 {
+  @apply absolute right-2 -top-4 z-10 w-32 h-32 rounded-full duration-500 bg-sky-800;
+}
+
+.btn-component .circle-3 {
+  @apply absolute -right-12 top-4 z-10 w-24 h-24 rounded-full duration-500 bg-sky-700;
+}
+
+.btn-component .circle-4 {
+  @apply absolute right-20 -top-4 z-10 w-16 h-16 rounded-full duration-500 bg-sky-600;
+}
+
+.btn-primary {
+  @apply bg-[#3F8CFF] hover:bg-[#3A7BFF] text-white hover:text-white border-blue-600;
+}
+
+.btn-secondary {
+  @apply bg-gray-500 hover:bg-gray-600 text-white hover:text-black border-gray-700;
+}
+
+.btn-delete {
+  @apply bg-red-500 hover:bg-red-600 text-white hover:text-white border-red-700;
+}
+
+.btn-update {
+  @apply bg-yellow-500 hover:bg-yellow-600 text-black hover:text-white border-yellow-600;
+}
+
+.hidden-input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.flexbox-center {
+  @apply flex justify-center items-center;
+}
+
+.flexbox-between {
+  @apply flex justify-between items-center;
+}

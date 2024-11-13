@@ -1,0 +1,19 @@
+.howItWorks {
+    @apply flex flex-col 2xl:mx-[210px] py-20;
+
+    & > .howItWorks__title {
+        @apply flex items-center flex-col;
+
+        & > .title {
+            @apply capitalize text-5xl font-medium;
+        }
+
+        & > .howItWorks__img {
+            @apply w-[500px] mt-4;
+        }
+    }
+
+    & > .howItWorks__content {
+        @apply w-full mt-16 px-28 md:px-14;
+    }
+}

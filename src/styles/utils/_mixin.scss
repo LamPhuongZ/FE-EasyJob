@@ -1,0 +1,63 @@
+/**
+  * @mixin: flexbox-layout 
+    (
+        $direction: column,
+        $align-items: false,
+        $justify-content: false,
+        $gap: false
+    )
+*/
+@mixin flexbox-layout(
+  $direction: column,
+  $align-items: false,
+  $justify-content: false,
+  $gap: false
+) {
+  display: flex;
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $align-items != none {
+    align-items: $align-items;
+  }
+  @if $justify-content != none {
+    justify-content: $justify-content;
+  }
+  @if $gap != none {
+    gap: $gap;
+  }
+}
+
+/**
+  * @mixin: positioning 
+    (
+        $position: relative,
+        $top: false,
+        $left: false,
+        $bottom: false,
+        $right: false
+    )
+*/
+@mixin positioning(
+  $position: relative,
+  $top: false,
+  $left: false,
+  $bottom: false,
+  $right: false
+) {
+  @if $position {
+    position: $position;
+  }
+  @if $top != none {
+    top: $top;
+  }
+  @if $left != none {
+    left: $left;
+  }
+  @if $bottom != none {
+    bottom: $bottom;
+  }
+  @if $right != none {
+    right: $right;
+  }
+}
