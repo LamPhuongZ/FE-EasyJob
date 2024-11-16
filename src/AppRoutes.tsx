@@ -6,6 +6,7 @@ const HomePage = lazy(() => import("./pages/HomePage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 const LandingPage = lazy(() => import("./pages/LandingPage"));
 const PolicyPage = lazy(() => import("./pages/PolicyPage"));
+const OTPRegister = lazy(() => import("./pages/AuthPage/OTPRegister"));
 
 // Định nghĩa mảng các route
 export const routes: RouteObject[] = [
@@ -18,5 +19,6 @@ export const routes: RouteObject[] = [
       { path: "/policy-page", element: <PolicyPage /> },
     ],
   },
+  { path: "/otp-register", element: <OTPRegister /> },
   { path: "*", element: <NotFoundPage /> },
 ];

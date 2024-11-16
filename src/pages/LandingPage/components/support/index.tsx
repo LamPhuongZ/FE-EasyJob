@@ -1,6 +1,5 @@
 import './support.scss';
 import { assetsIcon } from "../../../../assets/assets";
-import Card from "../../../../components/card/Card";
 
 export default function Support() {
   const content = [
@@ -26,9 +25,9 @@ export default function Support() {
       <div className="form-layout-col3 mt-12">
         {content.map((item) => {
           return (
-            <Card
+            <div
               key={item.id}
-              className="bg-white px-[47px] py-[110px] rounded-[20px] shadow-custom w-[380px] lg:h-[510px] md:h-[300px]"
+              className="flex flex-col justify-center bg-white px-[47px] py-[110px] rounded-[20px] shadow-custom w-[380px] lg:h-[510px] md:h-[300px]"
             >
               <div className="flex flex-col gap-5 items-center">
                 <img src={item.src} alt="icon-support" width={98} height={86} />
@@ -36,7 +35,7 @@ export default function Support() {
                   {item.des}
                 </h1>
               </div>
-            </Card>
+            </div>
           );
         })}
       </div>

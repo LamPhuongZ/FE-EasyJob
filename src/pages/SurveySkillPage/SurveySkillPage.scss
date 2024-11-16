@@ -1,0 +1,47 @@
+.surveySkill {
+  @apply h-screen flex flex-col justify-center items-center;
+
+  & > .card {
+    @apply w-[1129px] h-auto rounded-2xl py-[33px] px-[23px] flex flex-col gap-6 shadow-[0px_20px_60px_-6px_rgba(40,40,40,0.08)];
+
+    & > .logo {
+      @apply text-right;
+      text-align: -webkit-right;
+    }
+
+    & > .card__title {
+      @apply flex flex-col justify-between items-center w-full;
+
+      & > .title {
+        @apply text-3xl font-semibold uppercase;
+      }
+
+      & > .description {
+        @apply text-gray-400;
+      }
+    }
+
+    & > .form {
+      & > .card__skill {
+        @apply flex justify-center items-center flex-wrap gap-5;
+
+        & > .skills {
+          // flex: 1 1 calc(20% - 8px);
+          max-width: calc(30% - 20px);
+          white-space: nowrap;
+
+          & > .btn__jobSkill {
+            @apply w-auto h-auto px-4 py-2 bg-transparent text-black hover:bg-tw-text-opacity hover:text-white hover:border-white text-xl font-medium rounded-[20px] border-2 border-blue-600;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+
+          & > .active {
+            @apply bg-blue-600 text-white;
+          }
+        }
+      }
+    }
+  }
+}

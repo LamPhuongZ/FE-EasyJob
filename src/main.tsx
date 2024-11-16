@@ -6,7 +6,10 @@ import { FloatButton } from "antd";
 import { ToastContainer } from "react-toastify";
 import { Suspense } from "react";
 import { createBrowserHistory } from "history";
-import { unstable_HistoryRouter as HistoryRouter, useRoutes } from "react-router-dom";
+import {
+  unstable_HistoryRouter as HistoryRouter,
+  useRoutes,
+} from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import Loading from "./components/loading";
 import { routes } from "./AppRoutes";
@@ -19,12 +22,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <Provider store={store}>
-    <Suspense fallback={<Loading />}>
-      <HistoryRouter history={routeLink}>
+    <HistoryRouter history={routeLink}>
+      <Suspense fallback={<Loading />}>
         <AppRoutes />
         <ToastContainer />
-      </HistoryRouter>
-    </Suspense>
-    <FloatButton.BackTop tooltip={<div>Về đầu trang</div>} />
+        <FloatButton.BackTop tooltip={<div>Về đầu trang</div>} />
+      </Suspense>
+    </HistoryRouter>
   </Provider>
 );

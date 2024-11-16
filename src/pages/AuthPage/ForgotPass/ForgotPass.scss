@@ -1,0 +1,21 @@
+.forgotPass {
+  @apply h-screen flex justify-center items-center;
+
+  & > .card {
+    @apply w-[504px] h-[365px] rounded-2xl flex flex-col justify-center items-center gap-6 shadow-[0px_20px_60px_-6px_rgba(40,40,40,0.08)];
+
+    & > .title {
+      @apply text-4xl font-semibold uppercase;
+    }
+
+    & > .form {
+      @apply w-[70%];
+
+      & > .field {
+        & > .error__content {
+          @apply text-red-600 pt-2;
+        }
+      }
+    }
+  }
+}

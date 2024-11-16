@@ -20,7 +20,7 @@ const DropdownContext = createContext<
   | undefined
 >(undefined);
 
-function DropdownProvider({ children }: Props) {
+export default function DropdownProvider({ children }: Props) {
   const [show, setShow] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null); // tham chiếu đến dropdown
 
@@ -58,6 +58,7 @@ function DropdownProvider({ children }: Props) {
     </DropdownContext.Provider>
   );
 }
+
 function useDropdown() {
   const context = useContext(DropdownContext);
   if (typeof context === "undefined")

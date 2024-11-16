@@ -1,5 +1,4 @@
 import './feedback.scss';
-import Card from "../../../../components/card/Card";
 import { assetsIcon, assetsImage } from '../../../../assets/assets';
 
 const feedbackData = [
@@ -36,7 +35,7 @@ export default function Feedback() {
         </h2>
         <div className="feedback__cards">
           {feedbackData.map((item, index) => (
-              <Card
+              <div
                 key={index}
                 className="feedback__card"
               >
@@ -52,7 +51,7 @@ export default function Feedback() {
                     </p>
                   </div>
                 </div>
-              </Card>
+              </div>
           ))}
         </div>
       </div>

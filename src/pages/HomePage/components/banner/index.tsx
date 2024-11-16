@@ -1,12 +1,14 @@
-import { IoSearch } from "react-icons/io5";
-import Button from "../../../../components/button/Button";
 import { useState } from "react";
-import { Province, useAddress } from "../../../../hooks/useAddress";
+import { IoSearch } from "react-icons/io5";
 import { assetsImage } from "../../../../assets/assets";
+import { useAddress } from "../../../../hooks/useAddress";
+import { Button } from "../../../../components/button";
 
 export default function Banner() {
-  const { provinces } = useAddress();
+  const { getProvinces } = useAddress();
   const [searchInput, setSearchInput] = useState("");
+  const provinces = getProvinces();
+
 
   return (
     <div className="banner">
@@ -47,7 +49,7 @@ export default function Banner() {
           <div className="line"></div>
           <select className="select__area bg-[transparent] w-[20%] !text-xs md:w-[30%] md:!text-lg">
             <option value="0">Tất cả địa điểm</option>
-            {provinces?.map((province: Province, index: number) => (
+            {provinces?.map((province, index: number) => (
               <option value={province.id} key={`${province.id}_${index}`}>
                 {province.name}
               </option>
