@@ -1,0 +1,40 @@
+.modal__auth {
+  @apply flex min-h-screen;
+
+  & > .auth__group {
+    @apply bg-white w-4/5 flex justify-between relative items-center my-[75px] mx-auto p-10 md:p-5 sm:p-2 rounded-2xl overflow-hidden;
+
+    & > .components__auth {
+      @apply flex justify-between w-full h-full;
+    }
+
+    & > .overlay {
+      @apply absolute top-0 left-0 h-full w-1/2 rounded-s-sm bg-blue-900 text-white flex items-center justify-center transition-all duration-700 ease-in-out z-[10000];
+
+      /* Cập nhật cho overlay di chuyển sang trái hoặc phải */
+      &.overlay-left {
+        @apply translate-x-[-100%]; /* Di chuyển sang trái */
+      }
+
+      &.overlay-right {
+        @apply translate-x-[100%]; /* Di chuyển sang phải */
+      }
+
+      & > .nav__link {
+        @apply flex flex-col justify-center items-center gap-3;
+
+        & > .logo {
+          @apply w-[100px] h-[100px];
+        }
+
+        & > p {
+          @apply flex flex-row justify-center gap-[2px];
+
+          & > .logo__title {
+            @apply w-[22px] h-[22px] rounded-[50%];
+          }
+        }
+      }
+    }
+  }
+}

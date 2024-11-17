@@ -1,6 +1,9 @@
 import "./OTPRegister.scss";
 
 export default function OTPRegister() {
+  
+
+
   return (
     <div className="otp">
       <div className="card">

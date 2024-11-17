@@ -15,12 +15,16 @@ interface ILoginType {
   password: string;
 }
 
-export default function Login() {
+type Props = {
+  toggleActive: () => void;
+}
+
+export default function Login({ toggleActive }: Props) {
   const {
     handleSubmit,
     control,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     mode: "onChange",
     resolver: yupResolver(LoginSchema),
@@ -44,9 +48,7 @@ export default function Login() {
           <h1 className="title">Chào mừng bạn đã trở lại</h1>
           <p className="question">
             Bạn chưa có tài khoản?{" "}
-            <Link to={"/register"} className="link">
-              Đăng ký
-            </Link>
+            <Button title="Đăng ký" onClick={toggleActive} className="link" circle={false} color="custom" />
           </p>
         </div>
         <div className="btn__google">
@@ -96,10 +98,12 @@ export default function Login() {
               <p>Ghi nhớ mật khẩu</p>
             </div>
 
-            <Link to={"/forgot-password"} className="link">Quên mật khẩu?</Link>
+            <Link to={"/forgot-password"} className="link">
+              Quên mật khẩu?
+            </Link>
           </Field>
           <Field>
-            <Button title="Đăng Nhập" className="w-full h-16" circle={false} />
+            <Button title="Đăng Nhập" className="w-full h-16" circle={false} disabled={isSubmitting} />
           </Field>
         </form>
       </div>

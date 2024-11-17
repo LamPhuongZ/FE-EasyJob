@@ -226,7 +226,7 @@ export default function Header() {
                 title="Đăng nhập / Đăng ký"
                 color="custom"
                 className="btn__login"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/modal-auth")}
                 circle={false}
               />
               {/* {!userProfile ? (

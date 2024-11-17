@@ -6,10 +6,11 @@ const HomePage = lazy(() => import("../pages/HomePage"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 const LandingPage = lazy(() => import("../pages/LandingPage"));
 const PolicyPage = lazy(() => import("../pages/PolicyPage"));
-const Login = lazy(() => import("../pages/AuthPage/components/Login"));
-const Register = lazy(() => import("../pages/AuthPage/components/Register"));
+// const Login = lazy(() => import("../pages/AuthPage/components/Login"));
+// const Register = lazy(() => import("../pages/AuthPage/components/Register"));
 const ForgotPass = lazy(() => import("../pages/AuthPage/components/ForgotPass"));
-const LoginRegister = lazy(() => import("../pages/AuthPage"));
+const OTPRegister = lazy(() => import("../pages/AuthPage/components/OTPRegister"));
+const ModalAuth = lazy(() => import("../pages/AuthPage"));
 
 // Định nghĩa mảng các route
 export const routes: RouteObject[] = [
@@ -22,9 +23,10 @@ export const routes: RouteObject[] = [
       { path: "/policy-page", element: <PolicyPage /> },
     ],
   },
-  { path: "/login", element: <Login /> },
-  { path: "/register", element: <Register /> },
+  // { path: "/login", element: <Login /> },
+  // { path: "/register", element: <Register /> },
   { path: "/forgot-password", element: <ForgotPass /> },
-  { path: "/LoginRegister", element: <LoginRegister /> },
+  { path: "/modal-auth", element: <ModalAuth /> },
+  { path: "/otp-register", element: <OTPRegister /> },
   { path: "*", element: <NotFoundPage /> },
 ];

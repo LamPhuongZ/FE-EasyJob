@@ -4,7 +4,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { RegisterSchema } from "../../../../utils/validation";
 import { useRef, useState } from "react";
 import { assetsImage } from "../../../../assets/assets";
-import { Link } from "react-router-dom";
 import { Field } from "../../../../components/field";
 import { Label } from "../../../../components/label";
 import { Input, InputPassword } from "../../../../components/input";
@@ -18,12 +17,16 @@ interface IRegisterType {
   phone: string;
 }
 
-export default function Register() {
+type Props = {
+  toggleActive: () => void;
+};
+
+export default function Register({ toggleActive }: Props) {
   const {
     handleSubmit,
     control,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     mode: "onChange",
     resolver: yupResolver(RegisterSchema),
@@ -59,9 +62,13 @@ export default function Register() {
           <h1 className="title">Chào mừng đến với EasyJob</h1>
           <p className="question">
             Bạn đã có tài khoản?{" "}
-            <Link to={"/login"} className="link">
-              Đăng nhập
-            </Link>
+            <Button
+              title="Đăng nhập"
+              onClick={toggleActive}
+              className="link"
+              circle={false}
+              color="custom"
+            />
           </p>
         </div>
         <div className="btn__google">
@@ -143,7 +150,12 @@ export default function Register() {
             />
           </Field>
           <Field>
-            <Button title="Đăng Ký" className="w-full h-16" circle={false} />
+            <Button
+              title="Đăng Ký"
+              className="w-full h-16"
+              circle={false}
+              disabled={isSubmitting}
+            />
           </Field>
         </form>
       </div>
