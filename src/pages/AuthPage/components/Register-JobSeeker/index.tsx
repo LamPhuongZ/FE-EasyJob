@@ -45,10 +45,10 @@ export default function RegisterJobSeeker({ toggleActive }: Props) {
 
   const handleRegister = async (values: IRegisterType) => {
     const reCAPTCHAValue = reCAPTCHARef.current?.getValue();
-    // if (!reCAPTCHAValue) {
-    //   toast.error("Làm ơn hãy hoàn thành reCAPTCHA");
-    //   return;
-    // }
+    if (!reCAPTCHAValue) {
+      toast.error("Làm ơn hãy hoàn thành reCAPTCHA");
+      return;
+    }
 
     console.log("reCAPTCHAValue: ", reCAPTCHAValue);
     console.log("Register value: ", values);
@@ -62,7 +62,7 @@ export default function RegisterJobSeeker({ toggleActive }: Props) {
   };
 
   return (
-    <div className="registerRecruiter">
+    <div className="registerJobSeeker">
       <div className="card">
         <div className="card__title">
           <h1 className="title">Chào mừng đến với EasyJob</h1>
@@ -90,12 +90,12 @@ export default function RegisterJobSeeker({ toggleActive }: Props) {
 
         <form className="form" onSubmit={handleSubmit(handleRegister)}>
           <Field>
-            <Label htmlFor="register-email" marginBottom="mb-2">
+            <Label htmlFor="email" marginBottom="mb-2">
               Email
             </Label>
             <Input
-              name="register-email"
-              placeholder="Nhập địa chỉ email..."
+              name="email"
+              placeholder="Nhập địa chỉ email: example@gmail.com"
               control={control}
             />
             {errors.email && (
@@ -117,11 +117,11 @@ export default function RegisterJobSeeker({ toggleActive }: Props) {
             )}
           </Field>
           <Field>
-            <Label htmlFor="register-password" marginBottom="mb-2">
+            <Label htmlFor="password" marginBottom="mb-2">
               Mật khẩu
             </Label>
             <InputPassword
-              name="register-password"
+              name="password"
               placeholder="Nhập mật khẩu..."
               control={control}
               type={togglePassword ? "text" : "password"}

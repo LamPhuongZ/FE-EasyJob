@@ -64,12 +64,12 @@ export default function Login({ toggleActive }: Props) {
 
         <form className="form" onSubmit={handleSubmit(handleLogin)}>
           <Field>
-            <Label htmlFor="login-email" marginBottom="mb-2">
+            <Label htmlFor="email" marginBottom="mb-2">
               Email
             </Label>
             <Input
-              name="login-email"
-              placeholder="Nhập địa chỉ email..."
+              name="email"
+              placeholder="Nhập địa chỉ email: example@gmail.com"
               control={control}
             />
             {errors.email && (
@@ -77,11 +77,11 @@ export default function Login({ toggleActive }: Props) {
             )}
           </Field>
           <Field>
-            <Label htmlFor="login-password" marginBottom="mb-2">
+            <Label htmlFor="password" marginBottom="mb-2">
               Mật khẩu
             </Label>
             <InputPassword
-              name="login-password"
+              name="password"
               placeholder="Nhập mật khẩu..."
               control={control}
               type={togglePassword ? "text" : "password"}

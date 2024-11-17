@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { RegisterSchema } from "../../../../utils/validation";
 import { useRef, useState } from "react";
-import { assetsImage } from "../../../../assets/assets";
 import { Field } from "../../../../components/field";
 import { Label } from "../../../../components/label";
 import { Input, InputPassword } from "../../../../components/input";
@@ -77,25 +76,15 @@ export default function RegisterRecruiter({ toggleActive }: Props) {
             />
           </p>
         </div>
-        <div className="btn__google">
-          <img src={assetsImage.Google} alt="btn-google" />
-          <p className="title">Đăng ký với Google</p>
-        </div>
-
-        <div className="group__line">
-          <div className="line"></div>
-          <p>or login with email</p>
-          <div className="line"></div>
-        </div>
 
         <form className="form" onSubmit={handleSubmit(handleRegister)}>
           <Field>
-            <Label htmlFor="register-email" marginBottom="mb-2">
+            <Label htmlFor="email" marginBottom="mb-2">
               Email
             </Label>
             <Input
-              name="register-email"
-              placeholder="Nhập địa chỉ email..."
+              name="email"
+              placeholder="Nhập địa chỉ email: example@gmail.com"
               control={control}
             />
             {errors.email && (
@@ -117,11 +106,11 @@ export default function RegisterRecruiter({ toggleActive }: Props) {
             )}
           </Field>
           <Field>
-            <Label htmlFor="register-password" marginBottom="mb-2">
+            <Label htmlFor="password" marginBottom="mb-2">
               Mật khẩu
             </Label>
             <InputPassword
-              name="register-password"
+              name="password"
               placeholder="Nhập mật khẩu..."
               control={control}
               type={togglePassword ? "text" : "password"}
