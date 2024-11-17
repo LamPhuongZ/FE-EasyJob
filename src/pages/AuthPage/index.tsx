@@ -3,23 +3,29 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { assetsImage } from "../../assets/assets";
 import Login from "./components/Login";
-import Register from "./components/Register";
+import ChooseRole from "./components/ChooseRole";
+import RegisterRecruiter from "./components/Register-Recruiter";
+import RegisterJobSeeker from "./components/Register-JobSeeker";
 
 export default function ModalAuth() {
   const [isToggleActive, setIsToggleActive] = useState<boolean>(true);
   const [isOverlayActive, setIsOverlayActive] = useState<boolean>(true);
+  const [selectedForm, setSelectedForm] = useState<string>("chooseRole");
 
   const handleToggleActive = () => {
     setIsToggleActive((prev) => !prev);
     setIsOverlayActive((prev) => !prev);
-    console.log("isToggleActive:", !isToggleActive);
+
+    if(!isToggleActive) {
+      setSelectedForm("chooseRole");
+    }
   };
 
   // Lớp cho overlay dựa trên trạng thái
   const overlayClass = isOverlayActive
     ? isToggleActive
-      ? "overlay overlay-right" // Khi overlay cần di chuyển sang trái
-      : "overlay overlay-left" // Khi overlay cần di chuyển sang phải
+      ? "overlay overlay-right" // Khi overlay cần di chuyển sang phải
+      : "overlay overlay-left" // Khi overlay cần di chuyển sang trái
     : "overlay"; // Khi overlay không hiển thị
 
   return (
@@ -27,7 +33,17 @@ export default function ModalAuth() {
       <div className="auth__group">
         <div className="components__auth">
           <Login toggleActive={handleToggleActive} />
-          <Register toggleActive={handleToggleActive} />
+
+          {selectedForm === "chooseRole" && (
+            <ChooseRole toggleActive={handleToggleActive} onSelectRole={setSelectedForm} />
+          )}
+          {selectedForm === "Recruiter" && (
+            <RegisterRecruiter toggleActive={handleToggleActive} />
+          )}
+          {selectedForm === "JobSeeker" && (
+            <RegisterJobSeeker toggleActive={handleToggleActive} />
+          )}
+
         </div>
         <div className={overlayClass}>
           <NavLink className="nav__link" to={"/"}>

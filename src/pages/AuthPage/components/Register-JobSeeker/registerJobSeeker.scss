@@ -1,4 +1,4 @@
-.register {
+.registerJobSeeker {
   @apply flex flex-col justify-center items-center w-1/2 self-stretch relative;
 
   & > .card {
@@ -21,22 +21,6 @@
             @apply underline;
           }
         }
-      }
-    }
-
-    & > .btn__google {
-      @apply w-full flex flex-row justify-center items-center gap-3 border border-[#F1F1F3] rounded-[10px] p-[13px] cursor-pointer;
-
-      &:hover {
-        @apply shadow-[0px_20px_60px_-6px_rgba(40,40,40,0.08)];
-      }
-
-      & > img {
-        @apply w-6 h-6;
-      }
-
-      & > .title {
-        @apply text-base font-semibold;
       }
     }
 

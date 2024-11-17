@@ -6,8 +6,6 @@ const HomePage = lazy(() => import("../pages/HomePage"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 const LandingPage = lazy(() => import("../pages/LandingPage"));
 const PolicyPage = lazy(() => import("../pages/PolicyPage"));
-// const Login = lazy(() => import("../pages/AuthPage/components/Login"));
-// const Register = lazy(() => import("../pages/AuthPage/components/Register"));
 const ForgotPass = lazy(() => import("../pages/AuthPage/components/ForgotPass"));
 const OTPRegister = lazy(() => import("../pages/AuthPage/components/OTPRegister"));
 const SurveySkillPage = lazy(() => import("../pages/SurveySkillPage"));
@@ -24,8 +22,6 @@ export const routes: RouteObject[] = [
       { path: "/policy-page", element: <PolicyPage /> },
     ],
   },
-  // { path: "/login", element: <Login /> },
-  // { path: "/register", element: <Register /> },
   { path: "/forgot-password", element: <ForgotPass /> },
   { path: "/modal-auth", element: <ModalAuth /> },
   { path: "/skill-page", element: <SurveySkillPage /> },

@@ -1,4 +1,4 @@
-import "./register.scss";
+import "./registerRecruiter.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { RegisterSchema } from "../../../../utils/validation";
@@ -22,7 +22,7 @@ type Props = {
   toggleActive: () => void;
 };
 
-export default function Register({ toggleActive }: Props) {
+export default function RegisterRecruiter({ toggleActive }: Props) {
   const {
     handleSubmit,
     control,
@@ -45,10 +45,10 @@ export default function Register({ toggleActive }: Props) {
 
   const handleRegister = async (values: IRegisterType) => {
     const reCAPTCHAValue = reCAPTCHARef.current?.getValue();
-    // if (!reCAPTCHAValue) {
-    //   toast.error("Làm ơn hãy hoàn thành reCAPTCHA");
-    //   return;
-    // }
+    if (!reCAPTCHAValue) {
+      toast.error("Làm ơn hãy hoàn thành reCAPTCHA");
+      return;
+    }
 
     console.log("reCAPTCHAValue: ", reCAPTCHAValue);
     console.log("Register value: ", values);
@@ -62,7 +62,7 @@ export default function Register({ toggleActive }: Props) {
   };
 
   return (
-    <div className="register">
+    <div className="registerRecruiter">
       <div className="card">
         <div className="card__title">
           <h1 className="title">Chào mừng đến với EasyJob</h1>
