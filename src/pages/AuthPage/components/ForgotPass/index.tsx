@@ -1,11 +1,11 @@
-import "./ForgotPass.scss";
+import "./forgotPass.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { EmailSchema } from "../../../utils/validation";
-import Field from "../../../components/field/Field";
-import Label from "../../../components/label/Label";
-import Input from "../../../components/input/Input";
-import Button from "../../../components/button/Button";
+import { EmailSchema } from "../../../../utils/validation";
+import Field from "../../../../components/field/Field";
+import Label from "../../../../components/label/Label";
+import Input from "../../../../components/input/Input";
+import Button from "../../../../components/button/Button";
 
 export default function ForgotPass() {
   const {
@@ -35,7 +35,7 @@ export default function ForgotPass() {
             <Label htmlFor="email" marginBottom="mb-2">
               Email
             </Label>
-            <Input name="email" placeholder="Nhập email" control={control} />
+            <Input name="email" placeholder="Nhập địa chỉ email..." control={control} />
             {errors.email && <p className="error__content">{errors.email.message}</p>}
           </Field>
           <Field>

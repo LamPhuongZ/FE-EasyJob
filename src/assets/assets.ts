@@ -21,6 +21,7 @@ import How6Image from "./images/How6.png";
 import CheckedImage from "./images/Checked.png";
 import LocationImage from "./images/Location.png";
 import UploadImage from "./images/Upload.png";
+import reCAPTCHAImage from "./images/reCAPTCHA.png";
 
 import GoogleIcon from "./icons/Google.svg";
 import PhoneIcon from "./icons/phone.svg";
@@ -58,6 +59,7 @@ export const assetsImage = {
   CheckedImage,
   LocationImage,
   UploadImage,
+  reCAPTCHAImage,
 };
 
 export const assetsIcon = {

@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
-import IconEyeOpen from "../icon-eye/IconEyeOpen";
-import IconEyeClose from "../icon-eye/IconEyeClose";
 import { useController } from "react-hook-form";
 import { Control } from "react-hook-form";
+import { IconEyeClose, IconEyeOpen } from "../icon-eye";
 
 type Props = {
   name: string;

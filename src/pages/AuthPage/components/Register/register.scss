@@ -1,0 +1,73 @@
+.register {
+  @apply h-screen flex flex-col justify-center items-center;
+
+  & > .card {
+    @apply w-[504px] h-[959px] px-[40px] py-[48px] flex flex-col justify-center items-center gap-2 rounded-2xl shadow-[0px_20px_60px_-6px_rgba(40,40,40,0.08)] border-[#E6E8EC] bg-[#FFFFFF];
+
+    & > .card__title {
+      @apply flex flex-col items-center gap-4;
+
+      & > .title {
+        @apply text-3xl font-semibold capitalize;
+      }
+
+      & > .question {
+        @apply text-lg font-normal text-[#353945];
+
+        & > .link {
+          @apply text-blue-400;
+
+          &:hover {
+            @apply underline;
+          }
+        }
+      }
+    }
+
+    & > .btn__google {
+      @apply w-full flex flex-row justify-center items-center gap-3 border border-[#F1F1F3] rounded-[10px] p-[13px] cursor-pointer;
+
+      &:hover {
+        @apply shadow-[0px_20px_60px_-6px_rgba(40,40,40,0.08)];
+      }
+
+      & > img {
+        @apply w-6 h-6;
+      }
+
+      & > .title {
+        @apply text-base font-semibold;
+      }
+    }
+
+    & > .group__line {
+      @apply flex justify-center items-center gap-6 my-5;
+
+      & > p {
+        @apply text-sm font-normal text-[#777E90];
+      }
+
+      & > .line {
+        @apply w-[104px] border border-[#E6E8EC];
+      }
+    }
+
+    & > .form {
+      @apply w-full;
+
+      & > .field {
+        & > label {
+          @apply text-base font-medium;
+        }
+
+        & > .btn__reCAPTCHA {
+          @apply w-full;
+        }
+
+        & > .error__content {
+          @apply text-red-600 pt-2;
+        }
+      }
+    }
+  }
+}

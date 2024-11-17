@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import { DispatchType } from "../configStore";
-import { UserLoginType } from "../../pages/AuthPage/Login/Login";
+import { UserLoginType } from "../../pages/AuthPage/components/Login/Login";
 import { delCookie, getCookie, setCookie } from "../../utils/utilMethod";
 import { ACCESS_TOKEN, httpClient, USER_LOGIN } from "../../utils/config";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";

@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import Loading from "./components/loading";
-import { routes } from "./AppRoutes";
+import { routes } from "./routes/AppRoutes";
 
 export const routeLink: any = createBrowserHistory();
 const AppRoutes = () => useRoutes(routes);

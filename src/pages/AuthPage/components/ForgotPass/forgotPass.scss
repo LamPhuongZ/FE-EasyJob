@@ -12,6 +12,10 @@
       @apply w-[70%];
 
       & > .field {
+        & > label {
+          @apply text-base font-medium;
+        }
+
         & > .error__content {
           @apply text-red-600 pt-2;
         }
