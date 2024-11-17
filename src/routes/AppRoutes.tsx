@@ -10,6 +10,7 @@ const PolicyPage = lazy(() => import("../pages/PolicyPage"));
 // const Register = lazy(() => import("../pages/AuthPage/components/Register"));
 const ForgotPass = lazy(() => import("../pages/AuthPage/components/ForgotPass"));
 const OTPRegister = lazy(() => import("../pages/AuthPage/components/OTPRegister"));
+const SurveySkillPage = lazy(() => import("../pages/SurveySkillPage"));
 const ModalAuth = lazy(() => import("../pages/AuthPage"));
 
 // Định nghĩa mảng các route
@@ -27,6 +28,7 @@ export const routes: RouteObject[] = [
   // { path: "/register", element: <Register /> },
   { path: "/forgot-password", element: <ForgotPass /> },
   { path: "/modal-auth", element: <ModalAuth /> },
+  { path: "/skill-page", element: <SurveySkillPage /> },
   { path: "/otp-register", element: <OTPRegister /> },
   { path: "*", element: <NotFoundPage /> },
 ];

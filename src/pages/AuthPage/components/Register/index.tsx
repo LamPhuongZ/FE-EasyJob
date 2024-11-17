@@ -10,6 +10,7 @@ import { Input, InputPassword } from "../../../../components/input";
 import { Button } from "../../../../components/button";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 interface IRegisterType {
   email: string;
@@ -39,17 +40,22 @@ export default function Register({ toggleActive }: Props) {
   });
 
   const [togglePassword, setTogglePassword] = useState(false);
+  const navigate = useNavigate();
   const reCAPTCHARef = useRef<ReCAPTCHA | null>(null);
 
   const handleRegister = async (values: IRegisterType) => {
     const reCAPTCHAValue = reCAPTCHARef.current?.getValue();
-    if (!reCAPTCHAValue) {
-      toast.error("Làm ơn hãy hoàn thành reCAPTCHA");
-      return;
-    }
+    // if (!reCAPTCHAValue) {
+    //   toast.error("Làm ơn hãy hoàn thành reCAPTCHA");
+    //   return;
+    // }
 
     console.log("reCAPTCHAValue: ", reCAPTCHAValue);
     console.log("Register value: ", values);
+
+    // nếu xác nhận đăng ký thành công thì chuyển qua trang kỹ năng để cập nhật kỹ năng
+    toast.success("Đăng ký thành công");
+    navigate('/skill-page');
 
     reCAPTCHARef.current?.reset();
     reset();
@@ -84,11 +90,11 @@ export default function Register({ toggleActive }: Props) {
 
         <form className="form" onSubmit={handleSubmit(handleRegister)}>
           <Field>
-            <Label htmlFor="email" marginBottom="mb-2">
+            <Label htmlFor="register-email" marginBottom="mb-2">
               Email
             </Label>
             <Input
-              name="email"
+              name="register-email"
               placeholder="Nhập địa chỉ email..."
               control={control}
             />
@@ -111,11 +117,11 @@ export default function Register({ toggleActive }: Props) {
             )}
           </Field>
           <Field>
-            <Label htmlFor="password" marginBottom="mb-2">
+            <Label htmlFor="register-password" marginBottom="mb-2">
               Mật khẩu
             </Label>
             <InputPassword
-              name="password"
+              name="register-password"
               placeholder="Nhập mật khẩu..."
               control={control}
               type={togglePassword ? "text" : "password"}
