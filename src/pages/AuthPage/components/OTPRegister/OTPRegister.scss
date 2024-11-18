@@ -1,0 +1,38 @@
+.otp {
+  @apply flex flex-col items-center justify-center self-stretch min-h-screen bg-gray-100;
+
+  & > .card {
+    @apply w-[530px] h-[503px] px-[40px] py-[48px] flex flex-col justify-center items-center gap-10 rounded-2xl shadow-[0px_20px_60px_-6px_rgba(40,40,40,0.08)] border-[#E6E8EC] bg-[#FFFFFF];
+
+    & > .card__title {
+      @apply flex flex-col justify-center items-center gap-3;
+
+      & > .title {
+        @apply text-[40px] font-semibold;
+      }
+      & > .description {
+        @apply text-sm font-normal text-[#777E90];
+      }
+    }
+
+    & > .group__code {
+      @apply w-full flex flex-col justify-center items-center gap-7;
+
+      & > .enter__code {
+        @apply text-sm font-normal text-[#777E90];
+      }
+
+      & > .resend__code {
+        @apply flex flex-row justify-center items-center gap-1 text-base font-normal text-[#84878B];
+
+        & > .btn__resend {
+          @apply border-none text-base text-blue-700;
+
+          &:hover {
+            @apply underline;
+          }
+        }
+      }
+    }
+  }
+}
