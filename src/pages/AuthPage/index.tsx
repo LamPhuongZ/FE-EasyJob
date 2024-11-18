@@ -16,7 +16,7 @@ export default function ModalAuth() {
     setIsToggleActive((prev) => !prev);
     setIsOverlayActive((prev) => !prev);
 
-    if(!isToggleActive) {
+    if (!isToggleActive) {
       setSelectedForm("chooseRole");
     }
   };
@@ -33,17 +33,38 @@ export default function ModalAuth() {
       <div className="auth__group">
         <div className="components__auth">
           <Login toggleActive={handleToggleActive} />
+          <div
+            className={`${
+              selectedForm === "chooseRole"
+                ? "animate-slideIn"
+                : "animate-slideOut hidden"
+            }`}
+          >
+            <ChooseRole
+              toggleActive={handleToggleActive}
+              onSelectRole={setSelectedForm}
+            />
+          </div>
 
-          {selectedForm === "chooseRole" && (
-            <ChooseRole toggleActive={handleToggleActive} onSelectRole={setSelectedForm} />
-          )}
-          {selectedForm === "Recruiter" && (
+          <div
+            className={`${
+              selectedForm === "Recruiter"
+                ? "animate-slideIn"
+                : "animate-slideOut hidden"
+            }`}
+          >
             <RegisterRecruiter toggleActive={handleToggleActive} />
-          )}
-          {selectedForm === "JobSeeker" && (
-            <RegisterJobSeeker toggleActive={handleToggleActive} />
-          )}
+          </div>
 
+          <div
+            className={`${
+              selectedForm === "JobSeeker"
+                ? "animate-slideIn"
+                : "animate-slideOut hidden"
+            }`}
+          >
+            <RegisterJobSeeker toggleActive={handleToggleActive} />
+          </div>
         </div>
         <div className={overlayClass}>
           <NavLink className="nav__link" to={"/"}>

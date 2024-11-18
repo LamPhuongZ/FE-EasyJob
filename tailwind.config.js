@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -28,7 +25,22 @@ export default {
       },
 
       columnsGrid: "500px minmax(0, 1fr)",
+
+      keyframes: {
+        slideIn: {
+          "0%": { opacity: 0, transform: "translateX(10px)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
+        },
+        slideOut: {
+          "0%": { opacity: 1, transform: "translateX(0)" },
+          "100%": { opacity: 0, transform: "translateX(-10px)" },
+        },
+      },
+      animation: {
+        slideIn: "slideIn 0.5s ease-in-out",
+        slideOut: "slideOut 0.5s ease-in-out",
+      },
     },
   },
   plugins: [],
-}
+};
