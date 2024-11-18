@@ -84,7 +84,7 @@ export default function RegisterJobSeeker({ toggleActive }: Props) {
 
         <div className="group__line">
           <div className="line"></div>
-          <p>or login with email</p>
+          <p>or register with email</p>
           <div className="line"></div>
         </div>
 
